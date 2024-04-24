@@ -1,0 +1,153 @@
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+    body {
+        font-size: 200px;
+        line-height: 1.4;
+        padding: 2rem 3rem
+    }
+}
+
+html {
+    font-size: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+section {
+    display: flex;
+}
+
+.statistics {
+    display: grid;
+    justify-content: center;
+    width: 100vw;
+}
+
+.one-up {
+    justify-content: center;
+    margin: 0;
+}
+
+.two-up {
+    grid-column: span 4;
+    justify-content: center;
+    margin: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    flex: 2 200px;
+}
+
+body {
+    font: 100% Helvetica;
+}
+
+span {
+    border: 1px solid #27282B;
+    background-color: #4EFB89;
+}
+
+span:hover {
+    border: 1px solid #4EFB89;
+    background-color: #27282B;
+}
+
+h1 {
+    color: #27282B;
+    line-height: .9;
+    font-size: 10rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h1+p {
+
+    padding: 2rem 3rem;
+    font-size: 2.4rem;
+    line-height: 1.3;
+}
+
+p,
+li {
+    color: #27282B;
+    font-size: 1.4rem;
+    max-width: 32em;
+}
+
+.img-header {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-radius: 2.6rem;
+    grid-template-rows: 8rem 8rem 8rem 8rem;
+    gap: 1.6 rem
+}
+
+.img-contain {
+    float: left;
+    width: 100rem;
+    height: 100rem;
+}
+
+.img-header>div {
+    justify-content: center;
+    background-color: #4EFB89;
+    border-radius: 1.2rem;
+}
+
+img {
+    height: 50%;
+    width: 50%
+}
+
+.cover {
+    width: 100vh;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.contain {
+    width: 100vh;
+    height: 100vh;
+    object-fit: contain;
+}
+
+p:hover {
+    text-decoration: underline;
+    color: #4EFB89;
+}
+
+.pushback {
+    color: #8A8A8A;
+}
+
+.s-space {
+    height: 8px;
+}
+
+.m-space {
+    height: 24px;
+}
+
+.l-space {
+    height: 48px;
+}
+
+.xl-space {
+    height: 96px;
+}
+
+.header-space {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 90vw;
+    padding: 2rem 4rem;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

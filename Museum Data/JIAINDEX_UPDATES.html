@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>art</title>
+  <script src="d3.js"></script>
+
+<style>
+
+</style>
+</head>
+
+<div id="chart">chart will go here</div>
+
+<body>
+this is charts for art data
+<script>
+
+    Promise.all([d3.csv("Post2020_Museumdata.csv")])
+    .then(function(data){
+      //   console.log(data[0])
+         var blackArtistSplit = splitByColumn(data[0],"yearacquired")
+        console.log(blackArtistSplit)
+            //var blackArtists = blackArtistSplit["_False"]
+          
+            drawRect(blackArtistSplit)
+    })
+
+
+    function drawRect(splitData){
+            //console.log(splitData)
+
+            var svg = d3.select("#chart").append("svg")
+            .attr("width",500)
+            .attr("height",200)
+
+            svg.selectAll("rect")
+            .data(Object.keys(splitData))
+            .enter()
+            .append("rect")
+            .attr("x",0)
+            .attr("y",function(d,i){
+                return i*20+20})
+            .attr("height",10)
+            .attr("width",function(d){
+             //   console.log(splitData[d].length)
+                return splitData[d].length/100
+            })
+    }
+
+
+    function splitByColumn(dataset,columnToBeCounted){
+
+        var yearDictionary = {}
+
+        for(let i in dataset){
+            if(columnToBeCounted=="yearacquired"){
+                var year ="_"+ parseInt(dataset[i][columnToBeCounted])
+            }else{
+                var year ="_"+ dataset[i][columnToBeCounted]
+            }
+            if(dataset[i][columnToBeCounted]!=undefined){
+
+                var artworkInformation = dataset[i]
+                 var currentKeys = Object.keys(yearDictionary)
+                if(currentKeys.indexOf(year)<0){
+                    yearDictionary[year]=[]
+                    yearDictionary[year].push(artworkInformation)
+                }else{
+                    yearDictionary[year].push(artworkInformation)
+                }
+            }          
+        }
+        return yearDictionary
+    }
+
+
+</script>
+
+</body>
+
+</html>
